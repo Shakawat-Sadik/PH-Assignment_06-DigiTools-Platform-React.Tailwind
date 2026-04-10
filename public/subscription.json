@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "name": "AI Writing Pro",
+    "description": "Generate high-quality content, blogs, and marketing copy in seconds with advanced AI.",
+    "price": 29,
+    "period": "monthly",
+    "tag": "Best Seller",
+    "tagType": "best-seller",
+    "features": [
+      "Unlimited AI generations",
+      "Built-in plagiarism checker",
+      "Advanced SEO optimization tools"
+    ],
+    "icon": "/src/assets/products/writing_2327400 1.png"
+  },
+  {
+    "id": 2,
+    "name": "Pixel Perfect UI Kit",
+    "description": "A gigantic library of premium UI components, icons, and templates for modern web design.",
+    "price": 89,
+    "period": "one-time",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "1000+ customizable components",
+      "Figma, Sketch, & XD files",
+      "Free lifetime updates"
+    ],
+    "icon": "/src/assets/products/10.png"
+  },
+  {
+    "id": 3,
+    "name": "Cloud Storage Max",
+    "description": "Secure, encrypted cloud storage solution to keep your digital assets safe and accessible anywhere.",
+    "price": 99,
+    "period": "yearly",
+    "tag": "Great Value",
+    "tagType": "value",
+    "features": [
+      "2TB encrypted storage",
+      "Auto-sync across devices",
+      "Priority customer support"
+    ],
+    "icon": "/src/assets/products/20.png"
+  },
+  {
+    "id": 4,
+    "name": "Resume Builder Pro",
+    "description": "Craft professional, eye-catching resumes tailored to pass Applicant Tracking Systems effortlessly.",
+    "price": 15,
+    "period": "monthly",
+    "tag": "New",
+    "tagType": "new",
+    "features": [
+      "100+ professional templates",
+      "ATS optimization checking",
+      "1-click export to PDF"
+    ],
+    "icon": "/src/assets/products/01.png"
+  },
+  {
+    "id": 5,
+    "name": "Video Editor Suite",
+    "description": "Professional-grade video editing software with AI-powered effects, transitions, and audio mastering.",
+    "price": 199,
+    "period": "one-time",
+    "tag": "Professional",
+    "tagType": "pro",
+    "features": [
+      "4K video exporting",
+      "AI noise removal",
+      "Access to premium stock library"
+    ],
+    "icon": "/src/assets/products/11.png"
+  },
+  {
+    "id": 6,
+    "name": "Social Media Scheduler",
+    "description": "Automate your social presence across platforms with advanced scheduling and analytics.",
+    "price": 24,
+    "period": "monthly",
+    "tag": "Trending",
+    "tagType": "trending",
+    "features": [
+      "Connect up to 15 accounts",
+      "Automated post recycling",
+      "Detailed engagement analytics"
+    ],
+    "icon": "/src/assets/products/21.png"
+  },
+  {
+    "id": 7,
+    "name": "SEO Analyzer Pro",
+    "description": "Deep dive into your website's performance with comprehensive technical SEO audits and keyword tracking.",
+    "price": 149,
+    "period": "yearly",
+    "tag": "Popular",
+    "tagType": "popular",
+    "features": [
+      "Real-time keyword tracking",
+      "Competitor backlink analysis",
+      "White-label PDF reports"
+    ],
+    "icon": "/src/assets/products/02.png"
+  },
+  {
+    "id": 8,
+    "name": "Code Snippet Manager",
+    "description": "Organize, search, and reuse your favorite coding snippets across all your team projects instantly.",
+    "price": 49,
+    "period": "one-time",
+    "tag": "Developer Choice",
+    "tagType": "dev-choice",
+    "features": [
+      "Syntax highlighting for 50+ languages",
+      "Cloud sync IDE integration",
+      "Team collaboration folders"
+    ],
+    "icon": "/src/assets/products/12.png"
+  },
+  {
+    "id": 9,
+    "name": "Email Marketing Blast",
+    "description": "Grow your audience with high-converting email templates and powerful automated drip campaigns.",
+    "price": 39,
+    "period": "monthly",
+    "tag": "Essential",
+    "tagType": "essential",
+    "features": [
+      "Drag-and-drop email builder",
+      "A/B testing capabilities",
+      "Up to 10,000 subscribers"
+    ],
+    "icon": "/src/assets/products/22.png"
+  }
+]
