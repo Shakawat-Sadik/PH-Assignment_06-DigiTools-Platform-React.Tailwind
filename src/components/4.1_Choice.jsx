@@ -12,8 +12,8 @@ const Choice = ({ sp1 }) => {
     case "new":
         "text-[#0A883E] bg-[#DBFCE7]";
         break;
-    case "new":
-        "text-[#0A883E] bg-[#DBFCE7]";
+    case "Professional":
+        "text-[#2A2A2C] bg-[#AFAFA8]";
         break;
     }
   };

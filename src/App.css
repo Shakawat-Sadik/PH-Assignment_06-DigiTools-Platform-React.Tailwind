@@ -150,3 +150,7 @@
     filter: hue-rotate(360deg);
   }
 }
+
+.x{
+    background: #afafe8;
+}
