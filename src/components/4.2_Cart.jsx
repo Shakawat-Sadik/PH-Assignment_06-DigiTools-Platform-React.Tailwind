@@ -1,11 +1,11 @@
-// import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Cart = ({ inCarted_child, inCarted, setInCarted }) => {
   const { id, name, price, icon } = inCarted_child;
-  console.log(inCarted_child);
+  console.log(id);
   const handleRemove = () => {
-    // Filter out the specific item from the cart
-    setInCarted(inCarted.filter((cartItem) => cartItem.id !== id));
+    setInCarted(inCarted.filter((item) => item.id !== id));
+    toast.info("Item removed from your cart.");
   };
 
   return (

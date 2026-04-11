@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { Suspense, use, useState } from "react";
 import Choice from "./4.1_Choice";
 import Cart from "./4.2_Cart.jsx";
 
@@ -17,12 +17,11 @@ const random = (r, x, y) => {
   return res;
 };
 
-const Premium = () => {
+const Premium = ({inCarted, setInCarted}) => {
   const sp1 = use(packages);
 
-  const [inCarted, setInCarted] = useState([]);
+  console.log(inCarted);
 
-  console?.log(inCarted);
   const [currentTab, setCurrentTab] = useState(1);
 
   return (
@@ -60,20 +59,37 @@ const Premium = () => {
         </div>
       </div>
       {currentTab === 1 ? (
-        <div className="grid grid-cols-3 gap-7.5">
-          {sp1.map((c) => (
-            <Choice key={c.id} sp1_child={c} random={random(120, 60, 100)} inCarted={inCarted} setInCarted={setInCarted}></Choice>
-          ))}
-        </div>
+        <Suspense
+          fallback={
+            <div className="w-full py-10 flex items-center justify-center">
+              <span className="loading loading-ring loading-lg"></span>
+            </div>
+          }
+        >
+          <div className="grid grid-cols-3 gap-7.5">
+            {sp1.map((c) => (
+              <Choice key={c.id} sp1_child={c} random={random(120, 60, 100)} inCarted={inCarted} setInCarted={setInCarted}></Choice>
+            ))}
+          </div>
+        </Suspense>
       ) : (
-        <div className="flex flex-col items-center gap-4 w-full">
-          <h4 className="text-2xl font-bold mb-2">Your Cart</h4>
-          {inCarted.length > 0 ? (
-            inCarted?.map((c, i) => <Cart key={i} inCarted_child={c} inCarted={inCarted} setInCarted={setInCarted}></Cart>)
-          ) : (
-            <p className="opacity-70 text-lg">Your cart is empty.</p>
-          )}
-        </div>
+        <Suspense
+          fallback={
+            <div className="w-full py-10 flex items-center justify-center">
+              <span className="loading loading-ring loading-lg"></span>
+            </div>
+          }
+        >
+          <div className="flex flex-col items-center gap-4 w-full">
+            <h4 className="text-2xl font-bold mb-2">Your Cart</h4>
+            {inCarted.length > 0 ? (
+              inCarted?.map((c, i) => <Cart key={i} inCarted_child={c} inCarted={inCarted} setInCarted={setInCarted}></Cart>)
+            ) : (
+              <p className="opacity-70 text-lg">Your cart is empty.</p>
+            )}
+            {inCarted.reduce(total, )}
+          </div>
+        </Suspense>
       )}
     </section>
   );

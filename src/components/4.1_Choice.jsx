@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import Cart from "./4.2_Cart";
+import { toast } from "react-toastify";
+import BuyButton from "./777_Bonus_BuyButton";
 
 const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
   const switchCases = (tag) => {
@@ -24,9 +25,12 @@ const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
   };
 
   const [isClicked, setIsClicked] = useState(false);
-  console.log(inCarted);
-  const handleClick = () => {setIsClicked(true); setInCarted(prev => [...prev, sp1_child])};
-  const [r, x, y] = random;
+  const handleClick = () => {
+    setIsClicked(true); 
+    inCarted?.includes(sp1_child) ? toast?.warning("The item's in your cart already") : setInCarted(prev => [...prev, sp1_child]), toast?.success("Added to the cart");
+    
+  };
+  // const [r, x, y] = random;
   const { id, name, description, price, period, icon, tag, features } = sp1_child;
 
   return (
@@ -49,13 +53,7 @@ const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
             </p>
           ))}
         </div>
-        <button
-          onClick={handleClick}
-          style={{ backgroundImage: `linear-gradient(${r}deg, #4F39F6 ${x}%, #9514FA ${y}%)` }}
-          className={`singleClick text-white px-4 py-3 rounded-4xl`}
-        >
-          {isClicked ? "In Your Cart Now" : "Shop it"}
-        </button>
+        <BuyButton handleClick={handleClick} isClicked={isClicked} random={random} price={price}></BuyButton>
       </div>
     </section>
   );
@@ -66,46 +64,54 @@ export default Choice;
 /* (div.relative.flex.flex-col.m-4>label.absolute.top-0.5.right-0.5.text-white.bg-#FEF3C6.rounded-lg.px-3.py-1.5+img+h5.text-2xl.font-bold+p.font-normal.leading-5+(div>span.text-2xl+span)+(div.flex.flex-col.gap-2>p*3)+btn)*6 */
 
 
-/*
+
 
 //Alternate Approach
 
-import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import BuyListed from "./Deprecated-4.1.1_BuyListed";
+// import { useState } from "react";
+// import BuyListed from "./Deprecated-4.1.1_BuyListed";
 
-const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
-  const switchCases = (tag) => {
-    switch (tag) {
-      case "Best Seller":
-        return "text-[#BB4D00] bg-[#FEF3C6]";
-      case "Popular":
-        return "text-[#4F39F6] bg-[#E1E7FF]";
-      case "New":
-        return "text-[#0A883E] bg-[#DBFCE7]";
-      case "Professional":
-        return "text-[#2A2A2C] bg-[#AFAFA8]";
-      case "Developer Choice":
-        return "text-[#2A2A2C] bg-[#AFAFA8]";
-      case "Trending":
-        return "text-[#2A8A2A] bg-[#FAFAFA]";
-      default:
-        return "text-[#F0EDCC] bg-[#02343F]";
-    }
-  };
+// const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
+//   const switchCases = (tag) => {
+//     switch (tag) {
+//       case "Best Seller":
+//         return "text-[#BB4D00] bg-[#FEF3C6]";
+//       case "Popular":
+//         return "text-[#4F39F6] bg-[#E1E7FF]";
+//       case "New":
+//         return "text-[#0A883E] bg-[#DBFCE7]";
+//       case "Professional":
+//         return "text-[#2A2A2C] bg-[#AFAFA8]";
+//       case "Developer Choice":
+//         return "text-[#2A2A2C] bg-[#AFAFA8]";
+//       case "Trending":
+//         return "text-[#2A8A2A] bg-[#FAFAFA]";
+//       default:
+//         return "text-[#F0EDCC] bg-[#02343F]";
+//     }
+//   };
 
-  const [isClicked, setIsClicked] = useState(false);
-  const handleClick = () => {setIsClicked(true); setInCarted([...inCarted, sp1_child])};
-  console.log(inCarted);
+//   const [isClicked, setIsClicked] = useState(false);
+//   const handleClick = () => {setIsClicked(true); setInCarted([...inCarted, sp1_child])};
 
-  return (
-    <section>
-      <BuyListed sp1_child={sp1_child} switchCases={switchCases} random={random} handleClick={handleClick} isClicked={isClicked} setIsClicked={setIsClicked}></BuyListed>
-    </section>
-  );
-};
+//   return (
+//     <section>
+//       <BuyListed sp1_child={sp1_child} switchCases={switchCases} random={random} handleClick={handleClick} isClicked={isClicked} setIsClicked={setIsClicked}></BuyListed>
+//     </section>
+//   );
+// };
 
-export default Choice;
+// export default Choice;
 
+
+
+/*
+
+        <button
+          onClick={handleClick}
+          style={{ backgroundImage: `linear-gradient(${r}deg, #4F39F6 ${x}%, #9514FA ${y}%)` }}
+          className={`w-6 h-6 buyButton buyButton-wrapper buyText buyIcon text-white px-4 py-3 rounded-4xl`}
+        >
+          {isClicked ? "In Your Cart Now" : "Shop it"}
+        </button>
 */

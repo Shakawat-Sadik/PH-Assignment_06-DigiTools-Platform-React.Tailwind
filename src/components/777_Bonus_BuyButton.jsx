@@ -1,0 +1,152 @@
+import React from "react";
+import styled from "styled-components";
+
+const BuyButton = ({ handleClick, isClicked, random, price }) => {
+  const [r, x, y] = random;
+  return (
+    <StyledWrapper>
+      <div data-tooltip={`Price: -${price}.99`} className="button" onClick={handleClick}>
+        <div className="button-wrapper">
+          <div style={{ backgroundImage: `linear-gradient(${r}deg, #4F39F6 ${x}%, #9514FA ${y}%)` }} className={`text`}>
+            {isClicked ? "In Your Cart Now" : "Shop it"}
+          </div>
+          <span className="icon">
+            <svg viewBox="0 0 16 16" className="bi bi-cart2" fill="currentColor" height={16} width={16} xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </StyledWrapper>
+  );
+};
+const StyledWrapper = styled.div`
+  .button {
+    --width: full;
+    --height: 3rem;
+    --tooltip-height: 3rem;
+    --tooltip-width: 9rem;
+    --gap-between-tooltip-to-button: 1rem;
+    --button-color: #222;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background-image: linear-gradient(89deg, #4f39f6 -30.76%, #9514fa 99.27%);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45rem;
+    font-family: "Arial";
+    transition: background 0.3s;
+  }
+
+  .button::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-image: linear-gradient(89deg, #4f39f6 -30.76%, #9514fa 99.27%);
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: 0.25rem;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+
+  .button::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #4f39f6;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+
+  .button::after,
+  .button::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+  }
+
+  .button-wrapper,
+  .text,
+  .icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+
+  .text {
+    top: 0;
+  }
+
+  .text,
+  .icon {
+    transition: top 0.3s;
+  }
+
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .button:hover {
+    background-image: linear-gradient(89deg, #4f39f6 -30.76%, #9514fa 99.27%);
+  }
+
+  .button:hover .text {
+    top: -100%;
+  }
+
+  .button:hover .icon {
+    top: 0;
+  }
+
+  .button:hover:before,
+  .button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .button:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+
+  .button:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+`;
+
+export default BuyButton;
+
+
+
+//   <button
+//     onClick={handleClick}
+//     style={{ backgroundImage: `linear-gradient(${r}deg, #4F39F6 ${x}%, #9514FA ${y}%)` }}
+//     className={`w-6 h-2 buyButton buyButton-wrapper buyText buyIcon text-white px-4 py-3 rounded-4xl`}
+//   >
+//     {isClicked ? "In Your Cart Now" : "Shop it"}
+//   </button>
+// px-4 py-3

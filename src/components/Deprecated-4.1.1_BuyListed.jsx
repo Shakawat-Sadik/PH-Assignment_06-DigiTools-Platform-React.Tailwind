@@ -1,10 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import BuyButton from "./777_Bonus_BuyButton";
 
 const BuyListed = ({ switchCases, sp1_child, random, handleClick, isClicked}) => {
 
-  const [r, x, y] = random;
   const { id, name, description, price, period, icon, tag, features } = sp1_child;
   return (
     <div key={id} id={`card${id}`} className="relative flex flex-col gap-4 m-4">
@@ -25,13 +25,7 @@ const BuyListed = ({ switchCases, sp1_child, random, handleClick, isClicked}) =>
           </p>
         ))}
       </div>
-      <button
-        onClick={handleClick}
-        style={{ backgroundImage: `linear-gradient(${r}deg, #4F39F6 ${x}%, #9514FA ${y}%)` }}
-        className={`singleClick text-white px-4 py-3 rounded-4xl`}
-      >
-        {isClicked ? "In Your Cart Now" : "Shop it"}
-      </button>
+      <BuyButton handleClick={handleClick} isClicked={isClicked} random={random} price={price}></BuyButton>
     </div>
   );
 };
