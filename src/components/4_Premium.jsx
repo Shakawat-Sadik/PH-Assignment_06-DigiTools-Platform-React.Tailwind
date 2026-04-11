@@ -13,14 +13,16 @@ const random = (r, x, y) => {
   const rand1 = Math.random() * x;
   const rand2 = Math.random() * y;
   let res;
-  rand1 < 55 && 65 < rand2 ? res = [Math.ceil(rand), Math.ceil(rand1), Math.ceil(rand2)]: res = [89, 31, 99];
+  rand1 < 55 && 65 < rand2 ? (res = [Math.ceil(rand), Math.ceil(rand1), Math.ceil(rand2)]) : (res = [89, 31, 99]);
   return res;
 };
 
-console.log()
 const Premium = () => {
   const sp1 = use(packages);
 
+  const [inCarted, setInCarted] = useState([]);
+
+  console?.log(inCarted);
   const [currentTab, setCurrentTab] = useState(1);
 
   return (
@@ -52,17 +54,27 @@ const Premium = () => {
             }
           >
             <span className={currentTab && "bg-clip-text text-transparent bg-linear-89 from-[#4F39F6] from-31% to-[#9514FA] to-99%"}>
-              Cart ({})
+              Cart ({inCarted.length})
             </span>
           </button>
         </div>
       </div>
-      <div className={currentTab === 1 ? `grid grid-cols-3 gap-7.5` : `hidden`}>
-        {sp1.map((c) => (
-          <Choice key={c.id} sp1_child={c} random={random(120, 60, 100)}></Choice>
-        ))}{" "}
-      </div>
-      <div className={currentTab !== 1 ? `flex flex-col items-center gap-7.5` : `hidden`}></div>
+      {currentTab === 1 ? (
+        <div className="grid grid-cols-3 gap-7.5">
+          {sp1.map((c) => (
+            <Choice key={c.id} sp1_child={c} random={random(120, 60, 100)} inCarted={inCarted} setInCarted={setInCarted}></Choice>
+          ))}
+        </div>
+      ) : (
+        <div className="flex flex-col items-center gap-4 w-full">
+          <h4 className="text-2xl font-bold mb-2">Your Cart</h4>
+          {inCarted.length > 0 ? (
+            inCarted?.map((c, i) => <Cart key={i} inCarted_child={c} inCarted={inCarted} setInCarted={setInCarted}></Cart>)
+          ) : (
+            <p className="opacity-70 text-lg">Your cart is empty.</p>
+          )}
+        </div>
+      )}
     </section>
   );
 };
