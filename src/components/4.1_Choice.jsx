@@ -1,29 +1,36 @@
-import React from "react";
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import Cart from "./4.2_Cart";
 
-const Choice = ({ sp1 }) => {
+const Choice = ({ sp1_child, random }) => {
   const switchCases = (tag) => {
     switch (tag) {
       case "Best Seller":
-        "text-[#BB4D00] bg-[#FEF3C6]";
-        break;
-    case "popular":
-        "text-[#4F39F6] bg-[#E1E7FF]";
-        break;
-    case "new":
-        "text-[#0A883E] bg-[#DBFCE7]";
-        break;
-    case "Professional":
-        "text-[#2A2A2C] bg-[#AFAFA8]";
-        break;
+        return "text-[#BB4D00] bg-[#FEF3C6]";
+      case "Popular":
+        return "text-[#4F39F6] bg-[#E1E7FF]";
+      case "New":
+        return "text-[#0A883E] bg-[#DBFCE7]";
+      case "Professional":
+        return "text-[#2A2A2C] bg-[#AFAFA8]";
+      case "Developer Choice":
+        return "text-[#2A2A2C] bg-[#AFAFA8]";
+      case "Trending":
+        return "text-[#2A2A2A] bg-[#AFAFAF]";
+      default:
+        return "text-[#F0EDCC] bg-[#02343F]";
     }
   };
-  const choices = sp1;
-  return choices.map(({ id, name, description, price, period, icon, tag, features }) => {
+
+  const [isClicked, setIsClicked] = useState(false);
+  const [r, x, y] = random;
+  const { id, name, description, price, period, icon, tag, features } = sp1_child;
+
+  return (
+    <section>
     <div key={id} id={`card${id}`} className="relative flex flex-col gap-4 m-4">
-      <label
-        htmlFor={`card${id}`}
-        className={`absolute top-0.5 right-0.5 text-[#BB4D00] bg-[#FEF3C6] bg- rounded-4xl px-3 py-1.5`}
-      >
+      <label htmlFor={`card${id}`} className={`absolute top-0.5 right-0.5 ${switchCases(tag)} rounded-4xl px-3 py-1.5`}>
         {tag}
       </label>
       <img src={icon} alt={name} className="h-20 w-20 p-3.5" />
@@ -31,16 +38,30 @@ const Choice = ({ sp1 }) => {
       <p className="font-normal leading-5">{description}</p>
       <div>
         <span className="text-2xl">${price}.99</span>
-        <span className="">/{period}</span>
+        <span className="">
+          /{period}
+        </span>
       </div>
       <div className="flex flex-col gap-2">
-        {features.map((f) => {
-          <p>{f}</p>;
-        })}
+        {features.map((f, id) => (
+          <p key={id}>
+            <FontAwesomeIcon className="text-green-600" icon={faCheck} /> <span>{f}</span>
+          </p>
+        ))}
       </div>
-      <button></button>
-    </div>;
-  });
+      <button
+        onClickCapture={() => setIsClicked(true)}
+        style={{ backgroundImage: `linear-gradient(${r}deg, #4F39F6 ${x}%, #9514FA ${y}%)` }}
+        className={`singleClick text-white px-4 py-3 rounded-4xl`}
+      >
+        {isClicked ? "In Your Cart Now" : "Shop it"}
+      </button>
+    </div>
+        <div className="flex flex-col m-10">
+<h4 className="text-2xl"></h4>
+        </div>
+</section>
+  );
 };
 
 /* (div.relative.flex.flex-col.m-4>label.absolute.top-0.5.right-0.5.text-white.bg-#FEF3C6.rounded-lg.px-3.py-1.5+img+h5.text-2xl.font-bold+p.font-normal.leading-5+(div>span.text-2xl+span)+(div.flex.flex-col.gap-2>p*3)+btn)*6 */

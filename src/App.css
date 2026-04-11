@@ -1,4 +1,9 @@
 /* From Uiverse.io by mrhyddenn */
+
+:root{
+    --x: 0 0 2px 1px #9514fa;
+}
+
 .btn-uiverse {
   position: relative;
   /* padding: 10px 20px;
@@ -10,20 +15,6 @@
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-}
-
-.btn-uiverse:hover {
-  background: linear-gradient(89deg, #4f39f6 -30.76%, #9514fa 99.27%);
-  box-shadow: 0 0 30px 5px #9514fa;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-}
-
-.btn-uiverse:hover::before {
-  -webkit-animation: sh02 0.5s 0s linear;
-  -moz-animation: sh02 0.5s 0s linear;
-  animation: sh02 0.5s 0s linear;
 }
 
 .btn-uiverse::before {
@@ -66,6 +57,54 @@
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
+
+.btn-uiverse:hover {
+  background: linear-gradient(89deg, #4f39f6 -30.76%, #9514fa 99.27%);
+  box-shadow: 0 0 30px 5px #9514fa;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+.btn-uiverse:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+/*----------------------------------------------*/
+
+/* From Uiverse.io by barisdogansutcu */ 
+.singleClick {
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: white;
+  box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+.singleClick:hover {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+}
+
+.singleClick:active {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
+
 
 /*----------------------------------------------*/
 
