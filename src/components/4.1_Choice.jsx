@@ -10,15 +10,17 @@ const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
       case "Best Seller":
         return "text-[#BB4D00] bg-[#FEF3C6]";
       case "Popular":
-        return "text-[#4F39F6] bg-[#E1E7FF]";
+        return "text-[#eedfe2] bg-[#4A274F]";
       case "New":
         return "text-[#0A883E] bg-[#DBFCE7]";
       case "Professional":
-        return "text-[#2A2A2C] bg-[#AFAFA8]";
+        return "bg-[#2A2A2C] text-[#F2EDD7]";
       case "Developer Choice":
-        return "text-[#2A2A2C] bg-[#AFAFA8]";
+        return "bg-[#D7C49E] text-[#343148]";
       case "Trending":
-        return "text-[#2A8A2A] bg-[#FAFAFA]";
+        return "text-[#606060] bg-[#D6ED17]";
+      case "Great Value":
+        return "text-[#F0A07B] bg-[#3C1053]";
       default:
         return "text-[#F0EDCC] bg-[#02343F]";
     }

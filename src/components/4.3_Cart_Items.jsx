@@ -9,9 +9,9 @@ const CartItems = ({ inCarted_child, inCarted, setInCarted }) => {
   };
 
   return (
-    <div className="w-full max-w-2xl bg-[#E1E7FF]/20 border border-[#4F39F6]/20 rounded-xl p-4 flex items-center justify-between">
+    <div className="w-full max-w-2xl bg-[#D7C49E]/20 text-[#292826] border-4 border-[#292826]/20 rounded-xl p-4 flex items-center justify-between">
       <div className="flex items-center gap-4">
-        <img src={icon} alt={name} className="h-16 w-16 p-2 bg-white rounded-lg shadow-sm" />
+        <img src={icon} alt={name} className="h-16 w-16 p-2 bg-[#D7C49E]/50 rounded-lg shadow-sm" />
         <div className="flex flex-col text-left">
           <h5 className="text-xl font-semibold">{name}</h5>
           <p className="opacity-80 leading-5 text-sm">${price}</p>
@@ -19,7 +19,7 @@ const CartItems = ({ inCarted_child, inCarted, setInCarted }) => {
       </div>
       <button
         onClick={handleRemove}
-        className="px-4 py-2 border border-red-500 text-red-500 hover:bg-red-500 hover:text-white rounded-xl transition-all"
+        className="px-4 py-2 border-2 border-red-700 text-red-700 hover:bg-red-500 hover:text-white rounded-xl transition-all"
       >
         Remove
       </button>

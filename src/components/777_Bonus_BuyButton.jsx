@@ -140,13 +140,3 @@ const StyledWrapper = styled.div`
 
 export default BuyButton;
 
-
-
-//   <button
-//     onClick={handleClick}
-//     style={{ backgroundImage: `linear-gradient(${r}deg, #4F39F6 ${x}%, #9514FA ${y}%)` }}
-//     className={`w-6 h-2 buyButton buyButton-wrapper buyText buyIcon text-white px-4 py-3 rounded-4xl`}
-//   >
-//     {isClicked ? "In Your Cart Now" : "Shop it"}
-//   </button>
-// px-4 py-3

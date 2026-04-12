@@ -1,7 +1,7 @@
 import React from "react";
 import Cart from "./4.2_Cart";
 
-const Navbar = ({ total, checkout, inCarted, setInCarted }) => {
+const Navbar = ({ total, inCarted, setCurrentTab }) => {
   return (
     <div className="fixed z-10 navbar flex items-center justify-around bg-base-100 shadow-sm shadow-[#F2F2F2]">
       <div className="inline-flex items-center justify-center">
@@ -32,7 +32,9 @@ const Navbar = ({ total, checkout, inCarted, setInCarted }) => {
       <div className="hidden lg:flex">
         <ul className="navbar-center menu menu-horizontal px-1">
           <li>
-            <a href="">Products</a>
+            <a href="#premium-section" onClick={() => setCurrentTab(1)}>
+              Products
+            </a>
           </li>
           <li>
             <a href="">Features</a>
@@ -63,17 +65,25 @@ const Navbar = ({ total, checkout, inCarted, setInCarted }) => {
                 />{" "}
               </svg>
               <span className="badge badge-lg indicator-item font-extrabold bg-clip-text text-transparent bg-linear-89 from-[#4F39F6] from-31% to-[#9514FA] to-99% border-0 rounded-full">
-                {inCarted.length > 0 ? inCarted.length : ""}
+                {inCarted?.length > 0 ? inCarted?.length : ""}
               </span>
             </div>
           </div>
           <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
             <div className="card-body">
-              <span className="text-lg font-bold">{inCarted.length} Items</span>
+              <span className="text-lg font-bold">{inCarted?.length} Items</span>
               <span className="text-info">Subtotal: ${total}</span>
-              <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
-                <Cart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></Cart>
+              <div className={inCarted?.length > 0 ? "card-actions" : "hidden gap-2"}>
+                <button
+                  className="btn btn-primary btn-block"
+                  onClick={() => {
+                    setCurrentTab(0);
+                    document?.getElementById("premium-section")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  disabled={inCarted?.length === 0}
+                >
+                  View cart
+                </button>
               </div>
             </div>
           </div>

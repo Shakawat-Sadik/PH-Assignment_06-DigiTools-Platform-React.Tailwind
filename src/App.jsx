@@ -19,10 +19,10 @@ function App() {
   return (
     <>
       <div className="flex flex-col items-center gap-15 pb-15">
-        <Navbar total={total} inCarted={inCarted}></Navbar>
+        <Navbar total={total} inCarted={inCarted} setCurrentTab={setCurrentTab}></Navbar>
         <Banner></Banner>
         <Stats></Stats>
-        <Premium total={total} checkout={checkout} currentTab={currentTab} setCurrentTab={setCurrentTab} inCarted={inCarted} setInCarted={setInCarted}></Premium>
+        <Premium id="premium-section" total={total} checkout={checkout} currentTab={currentTab} setCurrentTab={setCurrentTab} inCarted={inCarted} setInCarted={setInCarted}></Premium>
       </div>
       <ToastContainer position="bottom-right" />
     </>

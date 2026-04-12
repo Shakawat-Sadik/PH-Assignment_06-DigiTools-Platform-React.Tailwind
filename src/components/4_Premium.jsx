@@ -25,8 +25,8 @@ const Premium = ({ total, checkout, currentTab, setCurrentTab, inCarted, setInCa
   console.log(inCarted);
 
   return (
-    <section>
-      <div className="flex flex-col items-center gap-4">
+    <section id="premium-section" className="w-[95vw] md:w-[80vw] flex flex-col items-center gap-8 md:gap-20 my-5 md:my-10 lg:my-20 mx-10 md:mx-25 lg:mx-50">
+      <div className="flex flex-col items-center gap-3.5 md:gap-8">
         <h3 className="text-5xl font-extrabold">Premium Digital Tools</h3>
         <p className="w-150 text-center opacity-80 text-sm">
           Choose from our curated collection of premium digital products designed to boost your productivity and creativity.
@@ -73,7 +73,9 @@ const Premium = ({ total, checkout, currentTab, setCurrentTab, inCarted, setInCa
           </div>
         </Suspense>
       ) : (
-        <Cart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></Cart>
+        <Suspense>
+          <Cart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></Cart>
+        </Suspense>
       )}
     </section>
   );
