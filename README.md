@@ -23,3 +23,5 @@ A modern, responsive e-commerce platform built with React, Vite, and Tailwind CS
   - `styled-components` for complex CSS animations
   - `@fortawesome/react-fontawesome` for scalable SVG icon rendering
 - **Notifications**: `react-toastify`
+
+**Visit the Single-page web app project at [Digitools-it-Yourself](https://digitools-it-yourself.netlify.app)**
