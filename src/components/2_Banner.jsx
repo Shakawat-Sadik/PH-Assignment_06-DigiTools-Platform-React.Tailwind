@@ -1,6 +1,7 @@
 import { Suspense, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import bannerImage from "../assets/banner.png";
 
 const Banner = () => {
   const [playClicked, setPlay] = useState(0);
@@ -23,7 +24,7 @@ const Banner = () => {
           Explore Products
         </p>
         <div className="flex gap-4 my-4">
-          <button className={`singleClick  text-[#4F39F6] px-4 py-3 rounded-4xl`}>Explore Products</button>
+          <a href="#premium-section" className={`singleClick  text-[#4F39F6] px-4 py-3 rounded-4xl`}>Explore Products</a>
           <button
             className="flex items-center gap-1.5 border gradient-button border-[#4F39F6] px-4 py-3 rounded-4xl"
             onClick={() => setPlay(playClicked === 0 ? 1 : 0)}
@@ -50,7 +51,7 @@ const Banner = () => {
         )}
       </div>
       <div className="flex flex-col shrink-0 justify-center">
-        <img src="./src/assets/banner.png" alt="banner-image" />
+        <img src={bannerImage} alt="banner-image" />
       </div>
     </section>
   );

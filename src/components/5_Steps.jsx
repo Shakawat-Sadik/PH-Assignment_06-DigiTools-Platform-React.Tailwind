@@ -1,4 +1,7 @@
 import React from "react";
+import userImage from "../assets/user.png";
+import packageImage from "../assets/package.png";
+import rocketImage from "../assets/rocket.png";
 
 const Steps = () => {
   return (
@@ -15,7 +18,7 @@ const Steps = () => {
           </div>
 
           <div className="bg-linear-89 from-[#4F39F6]/10 from-30 to-[#4F39F6]/10 to-99 rounded-full p-4 md:p-6">
-            <img src="/src/assets/user.png" alt="user image" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
+            <img src={userImage} alt="user image" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
           </div>
           <h4 className="text-2xl font-bold">Create Account</h4>
           <p className="text-center opacity-80 leading-5">Sign up for free in seconds. No credit card required to get started.</p>
@@ -25,7 +28,7 @@ const Steps = () => {
             2
           </div>
           <div className="bg-linear-89 from-[#4F39F6]/10 from-30 to-[#4F39F6]/10 to-99 rounded-full p-4 md:p-6">
-            <img src="/src/assets/package.png" alt="package image" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
+            <img src={packageImage} alt="package image" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
           </div>
           <h4 className="text-2xl font-bold">Choose Products</h4>
           <p className="text-center opacity-80 leading-5">Browse our catalog and select the tools that fit your needs.</p>
@@ -35,7 +38,7 @@ const Steps = () => {
             3
           </div>
           <div className="bg-linear-89 from-[#4F39F6]/10 from-30 to-[#4F39F6]/10 to-99 rounded-full p-4 md:p-6">
-            <img src="/src/assets/rocket.png" alt="rocket speed" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
+            <img src={rocketImage} alt="rocket speed" className="w-16 h-16 md:w-20 md:h-20 object-contain" />
           </div>
           <h4 className="text-2xl font-bold">Start Creating</h4>
           <p className="text-center opacity-80 leading-5">Download and start using your premium tools immediately.</p>
