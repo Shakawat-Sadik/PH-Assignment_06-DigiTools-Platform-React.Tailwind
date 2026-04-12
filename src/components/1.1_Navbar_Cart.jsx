@@ -1,4 +1,5 @@
 import {Suspense} from "react";
+import Cart from "./4.2_Cart";
 
 const NavbarCart = ({total, checkout, inCarted, setInCarted}) => {
   return (
