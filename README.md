@@ -19,7 +19,7 @@ A modern, responsive e-commerce platform built with React, Vite, and Tailwind CS
 - **Framework**: [React 19](https://react.dev/) via [Vite](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & [DaisyUI](https://daisyui.com/)
 - **Components & Icons**: 
-  - Buttons and Button ideas sourced from uiverse.
+  - Buttons and Button ideas sourced from [uiverse](https://uiverse.io/).
   - `styled-components` for complex CSS animations
   - `@fortawesome/react-fontawesome` for scalable SVG icon rendering
 - **Notifications**: `react-toastify`
