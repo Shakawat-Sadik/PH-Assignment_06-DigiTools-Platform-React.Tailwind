@@ -15,7 +15,7 @@ const Footer = () => {
           <nav className="font-normal text-sm">
             <ul className="flex flex-col gap-4">
               <li>
-                <a href="#featured">Features</a>
+                <a href="#premium-section">Features</a>
               </li>
               <li>
                 <a href="#pricing">Pricing</a>
