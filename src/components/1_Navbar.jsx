@@ -1,18 +1,13 @@
 import React from "react";
+import NavbarCart from "./1.1_Navbar_Cart";
 
-const Navbar = () => {
+const Navbar = ({ total, checkout, inCarted, setInCarted }) => {
   return (
-    <div className="navbar flex items-center justify-around bg-base-100 shadow-sm shadow-[#F2F2F2]">
+    <div className="fixed z-10 navbar flex items-center justify-around bg-base-100 shadow-sm shadow-[#F2F2F2]">
       <div className="inline-flex items-center justify-center">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {" "}
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />{" "}
             </svg>
@@ -58,13 +53,7 @@ const Navbar = () => {
         <div className="dropdown dropdown-end  gap-15">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {" "}
                 <path
                   strokeLinecap="round"
@@ -73,15 +62,18 @@ const Navbar = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />{" "}
               </svg>
-              <span className="badge badge-sm indicator-item bg-clip-text text-transparent bg-linear-89 from-[#4F39F6] from-31% to-[#9514FA] to-99% border-0 rounded-full">8</span>
+              <span className="badge badge-lg indicator-item font-extrabold bg-clip-text text-transparent bg-linear-89 from-[#4F39F6] from-31% to-[#9514FA] to-99% border-0 rounded-full">
+                {inCarted.length > 0 ? inCarted.length : ""}
+              </span>
             </div>
           </div>
           <div tabIndex={0} className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow">
             <div className="card-body">
-              <span className="text-lg font-bold">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
+              <span className="text-lg font-bold">{inCarted.length} Items</span>
+              <span className="text-info">Subtotal: ${total}</span>
               <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
+              <button className="btn btn-primary btn-block">View cart</button>
+                <NavbarCart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></NavbarCart>
               </div>
             </div>
           </div>

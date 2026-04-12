@@ -14,7 +14,7 @@ const Cart = ({ inCarted_child, inCarted, setInCarted }) => {
         <img src={icon} alt={name} className="h-16 w-16 p-2 bg-white rounded-lg shadow-sm" />
         <div className="flex flex-col text-left">
           <h5 className="text-xl font-semibold">{name}</h5>
-          <p className="opacity-80 leading-5 text-sm">${price}.99</p>
+          <p className="opacity-80 leading-5 text-sm">${price}</p>
         </div>
       </div>
       <button

@@ -27,7 +27,11 @@ const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
   const [isClicked, setIsClicked] = useState(false);
   const handleClick = () => {
     setIsClicked(true); 
-    inCarted?.includes(sp1_child) ? toast?.warning("The item's in your cart already") : setInCarted(prev => [...prev, sp1_child]), toast?.success("Added to the cart");
+    if(inCarted?.includes(sp1_child)){
+      toast?.warning("The item's in your cart already")
+    } else {
+      setInCarted(prev => [...prev, sp1_child]); toast?.success("Added to the cart");
+    }
     
   };
   // const [r, x, y] = random;
@@ -43,7 +47,7 @@ const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
         <h5 className="text-2xl font-bold">{name}</h5>
         <p className="font-normal leading-5">{description}</p>
         <div>
-          <span className="text-2xl">${price}.99</span>
+          <span className="text-2xl">${price}</span>
           <span className="">/{period}</span>
         </div>
         <div className="flex flex-col gap-2">

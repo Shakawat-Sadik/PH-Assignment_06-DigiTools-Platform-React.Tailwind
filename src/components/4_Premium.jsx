@@ -1,6 +1,8 @@
-import { Suspense, use, useState } from "react";
+import { Suspense, use } from "react";
 import Choice from "./4.1_Choice";
-import Cart from "./4.2_Cart.jsx";
+import NavbarCart from "./1.1_Navbar_Cart";
+// import Navbar from "./1_Navbar.jsx";
+// import {  } from "react-toastify";
 
 const promisedPackages = async () => {
   const res = await fetch("/subscription.json");
@@ -17,12 +19,11 @@ const random = (r, x, y) => {
   return res;
 };
 
-const Premium = ({inCarted, setInCarted}) => {
+const Premium = ({ total, checkout, currentTab, setCurrentTab, inCarted, setInCarted }) => {
   const sp1 = use(packages);
 
   console.log(inCarted);
 
-  const [currentTab, setCurrentTab] = useState(1);
 
   return (
     <section>
@@ -66,33 +67,16 @@ const Premium = ({inCarted, setInCarted}) => {
             </div>
           }
         >
-          <div className="grid grid-cols-3 gap-7.5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5">
             {sp1.map((c) => (
               <Choice key={c.id} sp1_child={c} random={random(120, 60, 100)} inCarted={inCarted} setInCarted={setInCarted}></Choice>
             ))}
           </div>
         </Suspense>
       ) : (
-        <Suspense
-          fallback={
-            <div className="w-full py-10 flex items-center justify-center">
-              <span className="loading loading-ring loading-lg"></span>
-            </div>
-          }
-        >
-          <div className="flex flex-col items-center gap-4 w-full">
-            <h4 className="text-2xl font-bold mb-2">Your Cart</h4>
-            {inCarted.length > 0 ? (
-              inCarted?.map((c, i) => <Cart key={i} inCarted_child={c} inCarted={inCarted} setInCarted={setInCarted}></Cart>)
-            ) : (
-              <p className="opacity-70 text-lg">Your cart is empty.</p>
-            )}
-            {inCarted.reduce(total, )}
-          </div>
-        </Suspense>
+        <NavbarCart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></NavbarCart>
       )}
     </section>
   );
 };
-
 export default Premium;
