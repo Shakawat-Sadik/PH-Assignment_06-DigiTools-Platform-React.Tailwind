@@ -1,11 +1,10 @@
-import { FacebookLogoIcon, InstagramLogoIcon, XLogoIcon } from "@phosphor-icons/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faSquareFacebook, faXTwitter } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram, faSquareFacebook, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer className="bg-neutral text-neutral-content px-3 pb-5 pt-18">
-      <div className="container grid grid-cols-2 lg:grid-cols-6 gap-10 pb-16 border-b border-neutral-content/20">
+    <footer className="bg-neutral text-neutral-content py-5 md:py-10 lg:py-20 px-10 md:px-25 lg:px-50">
+      <div className="w-full grid grid-cols-2 lg:grid-cols-6 gap-10 pb-16 border-b border-neutral-content/20">
         <div className="col-span-2 flex flex-col gap-4">
           <h1 className="text-3xl font-semibold">DigiTools</h1>
           <p>Premium digital tools for creators, professionals, and businesses. Work smarter with our suite of powerful tools.</p>
@@ -74,22 +73,31 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <span className="text-base font-medium">Social Links</span>
           <div className="flex gap-2">
-            <a href="#" className="w-fit text-lg p-2 rounded-full block aspect-square bg-base-content text-base-100">
+            <a
+              href="#"
+              className="w-fit text-lg p-2 rounded-full aspect-square bg-base-content text-base-100 items-center justify-center flex"
+            >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
 
-            <a href="#" className="w-fit text-lg p-2 rounded-full block aspect-square bg-base-content text-base-100">
+            <a
+              href="#"
+              className="w-fit text-lg p-2 rounded-full aspect-square bg-base-content text-base-100 items-center justify-center flex"
+            >
               <FontAwesomeIcon icon={faSquareFacebook} />
             </a>
 
-            <a href="#" className="w-fit text-lg p-2 rounded-full block aspect-square bg-base-content text-base-100">
+            <a
+              href="#"
+              className="w-fit text-lg p-2 rounded-full aspect-square bg-base-content text-base-100 items-center justify-center flex"
+            >
               <FontAwesomeIcon icon={faXTwitter} />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="container pt-5 text-xs tracking-wide flex flex-col gap-1 sm:flex-row items-center justify-between font-light text-neutral-content/70">
+      <div className="w-full pt-5 text-xs tracking-wide flex flex-col gap-1 sm:flex-row items-center justify-between font-light text-neutral-content/70 my-0 mx-auto">
         <p>&copy; 2026 Digitools. All rights reserved.</p>
 
         <div className="flex gap-2 md:gap-5">
@@ -100,4 +108,6 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

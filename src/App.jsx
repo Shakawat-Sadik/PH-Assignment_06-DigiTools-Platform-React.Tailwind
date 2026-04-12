@@ -7,6 +7,8 @@ import Stats from "./components/3_Stats";
 import Premium from "./components/4_Premium";
 import Steps from "./components/5_Steps";
 import Pricing from "./components/6_Pricing";
+import Featured from "./components/7_Featured";
+import Footer from "./components/8_Footer";
 
 function App() {
   const [currentTab, setCurrentTab] = useState(1);
@@ -24,10 +26,20 @@ function App() {
         <Navbar total={total} inCarted={inCarted} setCurrentTab={setCurrentTab}></Navbar>
         <Banner></Banner>
         <Stats></Stats>
-        <Premium id="premium-section" total={total} checkout={checkout} currentTab={currentTab} setCurrentTab={setCurrentTab} inCarted={inCarted} setInCarted={setInCarted}></Premium>
+        <Premium
+          id="premium-section"
+          total={total}
+          checkout={checkout}
+          currentTab={currentTab}
+          setCurrentTab={setCurrentTab}
+          inCarted={inCarted}
+          setInCarted={setInCarted}
+        ></Premium>
         <Steps></Steps>
         <Pricing></Pricing>
       </section>
+      <Featured></Featured>
+      <Footer></Footer>
       <ToastContainer position="bottom-right" />
     </>
   );
