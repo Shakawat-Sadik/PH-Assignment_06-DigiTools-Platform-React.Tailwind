@@ -1,6 +1,6 @@
 import { Suspense, use } from "react";
 import Choice from "./4.1_Choice";
-import NavbarCart from "./1.1_Navbar_Cart";
+import Cart from "./4.2_Cart";
 // import Navbar from "./1_Navbar.jsx";
 // import {  } from "react-toastify";
 
@@ -23,7 +23,6 @@ const Premium = ({ total, checkout, currentTab, setCurrentTab, inCarted, setInCa
   const sp1 = use(packages);
 
   console.log(inCarted);
-
 
   return (
     <section>
@@ -74,7 +73,7 @@ const Premium = ({ total, checkout, currentTab, setCurrentTab, inCarted, setInCa
           </div>
         </Suspense>
       ) : (
-        <NavbarCart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></NavbarCart>
+        <Cart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></Cart>
       )}
     </section>
   );

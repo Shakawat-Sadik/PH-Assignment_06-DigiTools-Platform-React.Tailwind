@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarCart from "./1.1_Navbar_Cart";
+import Cart from "./4.2_Cart";
 
 const Navbar = ({ total, checkout, inCarted, setInCarted }) => {
   return (
@@ -72,8 +72,8 @@ const Navbar = ({ total, checkout, inCarted, setInCarted }) => {
               <span className="text-lg font-bold">{inCarted.length} Items</span>
               <span className="text-info">Subtotal: ${total}</span>
               <div className="card-actions">
-              <button className="btn btn-primary btn-block">View cart</button>
-                <NavbarCart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></NavbarCart>
+                <button className="btn btn-primary btn-block">View cart</button>
+                <Cart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></Cart>
               </div>
             </div>
           </div>
