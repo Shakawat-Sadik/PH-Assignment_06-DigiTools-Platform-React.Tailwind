@@ -40,9 +40,9 @@ const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
   const { id, name, description, price, period, icon, tag, features } = sp1_child;
 
   return (
-    <section>
-      <div key={id} id={`card${id}`} className="relative flex flex-col gap-4 m-4">
-        <label htmlFor={`card${id}`} className={`absolute top-0.5 right-0.5 ${switchCases(tag)} rounded-4xl px-3 py-1.5`}>
+    <section className="flex h-full">
+      <div key={id} id={`card${id}`} className="relative flex flex-col w-full gap-4 m-4 bg-white border border-[#F2F2F2] rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow">
+        <label htmlFor={`card${id}`} className={`absolute top-1.5 right-1.5 ${switchCases(tag)} rounded-4xl px-3 py-1.5`}>
           {tag}
         </label>
         <img src={icon} alt={name} className="h-20 w-20 p-3.5" />
@@ -52,14 +52,14 @@ const Choice = ({ sp1_child, random, inCarted, setInCarted }) => {
           <span className="text-2xl">${price}</span>
           <span className="">/{period}</span>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col flex-1 gap-2">
           {features.map((f, id) => (
             <p key={id}>
               <FontAwesomeIcon className="text-green-600" icon={faCheck} /> <span>{f}</span>
             </p>
           ))}
         </div>
-        <BuyButton handleClick={handleClick} isClicked={isClicked} random={random} price={price}></BuyButton>
+        <BuyButton handleClick={handleClick} isClicked={isClicked} inCarted={inCarted} random={random} price={price}></BuyButton>
       </div>
     </section>
   );

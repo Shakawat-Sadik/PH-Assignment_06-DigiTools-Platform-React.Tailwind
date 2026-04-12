@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "./App.css";
 import Navbar from "./components/1_Navbar";
 import Banner from "./components/2_Banner";
 import Stats from "./components/3_Stats";
 import Premium from "./components/4_Premium";
-import { ToastContainer, toast } from "react-toastify";
-import "./App.css";
+import Steps from "./components/5_Steps";
+import Pricing from "./components/6_Pricing";
 
 function App() {
   const [currentTab, setCurrentTab] = useState(1);
@@ -18,12 +20,14 @@ function App() {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-15 pb-15">
+      <section className="flex flex-col items-center gap-15 pb-15">
         <Navbar total={total} inCarted={inCarted} setCurrentTab={setCurrentTab}></Navbar>
         <Banner></Banner>
         <Stats></Stats>
         <Premium id="premium-section" total={total} checkout={checkout} currentTab={currentTab} setCurrentTab={setCurrentTab} inCarted={inCarted} setInCarted={setInCarted}></Premium>
-      </div>
+        <Steps></Steps>
+        <Pricing></Pricing>
+      </section>
       <ToastContainer position="bottom-right" />
     </>
   );

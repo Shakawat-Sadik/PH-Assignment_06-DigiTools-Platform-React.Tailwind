@@ -1,16 +1,48 @@
-# React + Vite
+# DigiTools Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce platform built with React, Vite, and Tailwind CSS. DigiTools offers premium AI tools, design assets, templates, and productivity software. 
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dynamic Product Rendering**: Loads product plans (subscription tiers) from an external JSON API.
+- **Tabbed Interface**: Seamlessly switch between viewing available products and your active cart.
+- **Interactive Shopping Cart**: 
+  - Add items to your cart directly from the product listings.
+  - View total item count and calculate subtotals in real-time.
+  - Remove individual items from your cart view.
+- **Cart Modal & Navigation Integration**: A fixed navigation bar containing a cart badge with the current item count, and a modal layout to quickly access checkout.
+- **Micro-Animations & Polish**: Uses custom `styled-components` to create interactive "Bonus Buy" buttons, complete with hover tooltips and sliding icon animations.
+- **Toast Notifications**: Built-in alerts (via `react-toastify`) covering cart additions, duplicate item detection, item removal, and successful checkout flows.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 19](https://react.dev/) via [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & [DaisyUI](https://daisyui.com/)
+- **Components & Icons**: 
+  - `styled-components` for complex CSS animations
+  - `@fortawesome/react-fontawesome` for scalable SVG icon rendering
+- **Notifications**: `react-toastify`
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+Make sure you have Node.js and npm installed on your machine.
+
+### Installation
+1. Clone the repository and navigate into the project directory:
+   ```bash
+   git clone <repo-url>
+   cd PH-Assignment_06-DigiTools-Platform-React.Tailwind
+   ```
+
+2. Install all dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and visit `http://localhost:5173`. 

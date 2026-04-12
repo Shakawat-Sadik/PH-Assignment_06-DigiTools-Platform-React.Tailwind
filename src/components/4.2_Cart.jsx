@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import CartItems from "./4.3_Cart_Items";
+import CheckoutButton from "./777_Bonus_CheckoutButton";
 
 const Cart = ({ total, checkout, inCarted, setInCarted }) => {
   return (
@@ -12,7 +13,7 @@ const Cart = ({ total, checkout, inCarted, setInCarted }) => {
     >
       <div className="bg[#D7C49E]/80 w-full">
         {inCarted.length > 0 ? (
-          <div className=" w-full flex flex-col items-center bg-[#F2EDD7]/80 rounded-2xl gap-4 p-10 ">
+          <div className=" w-full flex flex-col items-center bg-[#F2EDD7]/40 text-[#292826]/80 rounded-2xl gap-4 p-10 ">
             <h4 className="text-2xl font-bold mb-2">Your Cart</h4>
             {inCarted?.map((c, i) => (
               <CartItems key={i} inCarted_child={c} inCarted={inCarted} setInCarted={setInCarted}></CartItems>
@@ -21,7 +22,7 @@ const Cart = ({ total, checkout, inCarted, setInCarted }) => {
               <span>Total:</span>
               <span>${total}</span>
             </div>
-            <button onClick={checkout}>Proceed to Checkout</button>
+            <CheckoutButton checkout={checkout}></CheckoutButton>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-4 w-full">

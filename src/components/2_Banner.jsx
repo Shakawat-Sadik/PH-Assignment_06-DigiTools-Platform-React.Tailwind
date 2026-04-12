@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
@@ -23,11 +23,7 @@ const Banner = () => {
           Explore Products
         </p>
         <div className="flex gap-4 my-4">
-          <button
-            className={`singleClick text-white hover:${`bg-clip-text text-transparent bg-linear-89 from-[#4F39F6] from-31% to-[#9514FA] to-99%`} bg-linear-89 from-[#4F39F6] from-31% to-[#9514FA] to-99% px-4 py-3 rounded-4xl`}
-          >
-            Explore Products
-          </button>
+          <button className={`singleClick  text-[#4F39F6] px-4 py-3 rounded-4xl`}>Explore Products</button>
           <button
             className="flex items-center gap-1.5 border gradient-button border-[#4F39F6] px-4 py-3 rounded-4xl"
             onClick={() => setPlay(playClicked === 0 ? 1 : 0)}
@@ -37,18 +33,20 @@ const Banner = () => {
           </button>
         </div>
         {playClicked === 1 && (
-          <div id="vdo" className="flex justify-center m-8">
-            <iframe
-              width="320"
-              height="240"
-              src="https://www.youtube.com/embed/HMo7dcOiL78"
-              title="BD তে Software Engineering Job পেতে DSA থেকে ঠিক কি কি শিখতে হবে?"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="noopener noreferrer"
-              allowfullscreen
-            ></iframe>
-          </div>
+          <Suspense fallback={<span className="loading loading-spinner"></span>}>
+            <div id="vdo" className="flex justify-center m-8">
+              <iframe
+                width="320"
+                height="240"
+                src="https://www.youtube.com/embed/HMo7dcOiL78"
+                title="BD তে Software Engineering Job পেতে DSA থেকে ঠিক কি কি শিখতে হবে?"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="noopener noreferrer"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </Suspense>
         )}
       </div>
       <div className="flex flex-col shrink-0 justify-center">

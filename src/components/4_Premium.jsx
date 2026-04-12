@@ -1,6 +1,7 @@
 import { Suspense, use } from "react";
 import Choice from "./4.1_Choice";
 import Cart from "./4.2_Cart";
+import Loader from "./777_Bonus_Loader";
 // import Navbar from "./1_Navbar.jsx";
 // import {  } from "react-toastify";
 
@@ -62,18 +63,18 @@ const Premium = ({ total, checkout, currentTab, setCurrentTab, inCarted, setInCa
         <Suspense
           fallback={
             <div className="w-full py-10 flex items-center justify-center">
-              <span className="loading loading-ring loading-lg"></span>
+              <Loader></Loader>
             </div>
           }
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7.5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full gap-7.5">
             {sp1.map((c) => (
               <Choice key={c.id} sp1_child={c} random={random(120, 60, 100)} inCarted={inCarted} setInCarted={setInCarted}></Choice>
             ))}
           </div>
         </Suspense>
       ) : (
-        <Suspense>
+        <Suspense fallback={<Loader></Loader>}>
           <Cart total={total} checkout={checkout} inCarted={inCarted} setInCarted={setInCarted}></Cart>
         </Suspense>
       )}

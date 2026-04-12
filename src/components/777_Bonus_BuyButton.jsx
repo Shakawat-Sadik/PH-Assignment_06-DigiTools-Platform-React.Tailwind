@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const BuyButton = ({ handleClick, isClicked, random, price }) => {
+const BuyButton = ({ handleClick, isClicked, inCarted, random, price }) => {
   const [r, x, y] = random;
   return (
     <StyledWrapper>
-      <div data-tooltip={`Price: -${price}.99`} className="button" onClick={handleClick}>
+      <div data-tooltip={`Price: -${price}.99`} className="button" onClick={handleClick}  disabled={ inCarted?.length === 0 }>
         <div className="button-wrapper">
           <div style={{ backgroundImage: `linear-gradient(${r}deg, #4F39F6 ${x}%, #9514FA ${y}%)` }} className={`text`}>
             {isClicked ? "In Your Cart Now" : "Shop it"}
@@ -37,6 +37,7 @@ const StyledWrapper = styled.div`
     border-radius: 0.45rem;
     font-family: "Arial";
     transition: background 0.3s;
+    cursor: pointer;
   }
 
   .button::before {

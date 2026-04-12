@@ -2,6 +2,7 @@
 
 :root{
     --x: 0 0 2px 1px #9514fa;
+    --grad: linear-gradient(89deg, #4F39F6 -30.76%, #9514FA 99.27%);
 }
 
 .btn-uiverse {
@@ -79,7 +80,7 @@
   padding: 17px 40px;
   border-radius: 50px;
   cursor: pointer;
-  border: 0;
+  border: 0.1rem solid #4F39F6;
   background-color: white;
   box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
   letter-spacing: 1.5px;
@@ -92,6 +93,7 @@
   letter-spacing: 3px;
   background-color: hsl(261deg 80% 48%);
   color: hsl(0, 0%, 100%);
+  border: 0;
   box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
 }
 
